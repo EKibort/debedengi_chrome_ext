@@ -1,0 +1,59 @@
+.sub_row {
+	width: 60%;
+	padding-top: 5px;
+	color: black;
+	height: 20px;
+	vertical-align: top;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+.sub_sum {
+	width: 40%;
+	color: #555;
+	vertical-align: top;
+	font-size: 13px;
+	padding-top: 6px;
+	padding-left: 0px;
+	text-align: right;
+}
+
+#di-main {
+	width: 320px;
+}
+
+tr {
+	display: table-row;
+}
+td,th { 
+	display:table-cell;
+}
+
+table{
+	width:100%;
+
+#abody {
+  min-width:357px;
+  overflow-x:hidden;
+}
+
+#adi-main {
+
+    font-family: 'Lucida Grande', 'Bitstream Vera Sans', 'trebuchet ms', verdana, tahoma, arial, sans-serif;
+    font-size: 1em;
+
+    width:310px;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgb(66,174,194);  
+    
+    border-radius: 10px;
+    
+    margin: 3px;
+    padding: 5px;
+    
+    color: white;   
+    
+}

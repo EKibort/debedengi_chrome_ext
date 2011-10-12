@@ -1,4 +1,4 @@
-﻿var API_ID = "demo_api"
+﻿var API_ID = "gchext_api"
 var DBD_SOAP_URL = "http://www.drebedengi.ru/soap/"
 
 function getBalanceReq(login,password)
@@ -41,7 +41,7 @@ function fillBalance(login,password){
 									 var xsltProcessor=new XSLTProcessor();
 									 xsltProcessor.importStylesheet(xslDoc);
 									 var resultDocument = xsltProcessor.transformToFragment(soapBalanceXml,document);
-									 $("#di-balance").append(resultDocument);
+									 $("#di-main").append(resultDocument);
 								});
 							},
 				error		: function(o){console.log(o);},     
@@ -49,5 +49,18 @@ function fillBalance(login,password){
    			});
 }
 
-fillBalance("demo@example.com","demo")
+
+function checkLogin(){
+	var login = localStorage["login"];
+	var password = localStorage["password"];
+
+	if (login === "undefined" || password === "undefined"){
+			 $("<p>NEED PASSWORDM</p>").appendTo("#di-main");}
+	else{
+		fillBalance(login,password)}
+}
+
+//fillBalance("alexant87@yandex.ru",'2187616')
+checkLogin();
+// fillBalance("demo@example.com","demo")
 

@@ -6,6 +6,7 @@
     "default_icon": "icon.png",
     "popup": "popup.html"
   },
+  "options_page": "options.html",
   "permissions": [
     "http://*/*"
   ]

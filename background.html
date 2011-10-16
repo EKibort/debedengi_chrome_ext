@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+	function setUserPassword(user, password) {
+		if (user == null){
+			window.localStorage.removeItem("USER");
+		}
+		else{
+			window.localStorage.setItem("USER", user);
+		}
+		if (password == null){
+			window.localStorage.removeItem("PASSWORD");
+		}
+		else{
+			window.localStorage.setItem("PASSWORD", password);
+		}
+	}
+
+	function getUser() {
+		return window.localStorage.getItem("USER");
+	}
+
+	function getPassword() {
+		return window.localStorage.getItem("PASSWORD");
+	}
+
+	function isUserPaswordExists()
+	{
+		var user = getUser();
+		var password = getPassword();
+		return ((user != null) && (password != null) && (user != "undeffined") && (password != "undeffined"));
+	}
+</script>
+</head>
+</html>
+

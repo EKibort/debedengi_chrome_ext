@@ -50,17 +50,34 @@ function fillBalance(login,password){
 }
 
 
-function checkLogin(){
-	var login = localStorage["login"];
-	var password = localStorage["password"];
-
-	if (login === "undefined" || password === "undefined"){
-			 $("<p>NEED PASSWORDM</p>").appendTo("#di-main");}
-	else{
-		fillBalance(login,password)}
+function save_userpas() {
+	var login = $("#di-user").val();
+	var password = $("#di-password").val();
+	chrome.extension.getBackgroundPage().setUserPassword(login, password);
+	checkLogin();
 }
 
-//fillBalance("alexant87@yandex.ru",'2187616')
+function reset_user(){
+	chrome.extension.getBackgroundPage().setUserPassword(null, null);
+	checkLogin();
+}
+
+
+function checkLogin(){
+        var  loggedIn = chrome.extension.getBackgroundPage().isUserPaswordExists();
+	if (!loggedIn){
+ 			 $("#di-logged").hide()
+			 $("#di-login").show()
+	}
+	else{
+		user    = chrome.extension.getBackgroundPage().getUser();
+		password = chrome.extension.getBackgroundPage().getPassword();
+		$("#di-login").hide()
+	        $("#di-logged").show()
+		$("#di-loggeduser").text(user)
+		fillBalance(user,password)
+	}
+}
+
 checkLogin();
-// fillBalance("demo@example.com","demo")
 

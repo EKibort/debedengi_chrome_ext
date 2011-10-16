@@ -8,10 +8,21 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css"/>
 
 	<script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>     
-	<script type="text/javascript" src="js/main.js"></script>     
 </head>
 
 <body class="popup_body">
   <div id="di-main"/>
+	  <div id="di-login" style="display:none">
+		<input type="text" name="di-user" id="di-user"/> 
+		<input type="password" name="di-password" id="di-password"/> 
+		<br/>
+		<button onclick="save_userpas()">Save</button>
+	   </div>
+	  <div id="di-logged" style="display:none">
+		<p>User:<span id="di-loggeduser"></span><button onclick="reset_user()">Logof</button></p>
+	  </div>
+
+	<script type="text/javascript" src="js/main.js"></script>     
+
 </body>
 </html>
